@@ -20,11 +20,16 @@ import java.util.*;
  * @Date 13/07/22
  */
 @Controller
-@RequestMapping("/api/v1")
 public class EmployeeController {
 
     @Autowired
     public EmployeeService employeeService;
+
+    @RequestMapping("/")
+    @ResponseBody
+    String Home(){
+        return "Hello World!";
+    }
 
     @RequestMapping(value = "/employeesview")
     public String employeesview(Model model) {
